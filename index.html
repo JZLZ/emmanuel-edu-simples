@@ -23,47 +23,42 @@
     <!-- Favicon placeholder -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- TailwindCSS -->
+    <link rel="stylesheet" href="src/index.css">
     
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-<body>
+<body class="font-sans">
     <!-- Header fixo com navegação -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="nav-wrapper">
+    <header class="fixed top-0 left-0 right-0 z-50 header-blur transition-all duration-300" id="header">
+        <div class="section-container">
+            <div class="flex items-center justify-between h-20 gap-6">
                 <!-- Logo/Nome da escola -->
-                <div class="logo">
-                    <h1>Educandário Emmanuel Junior</h1>
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-primary m-0">Educandário Emmanuel Junior</h1>
                 </div>
                 
                 <!-- Navegação desktop -->
-                <nav class="nav-desktop" aria-label="Navegação principal">
-                    <ul>
-                        <li><a href="#inicio" class="nav-link">Início</a></li>
-                        <li><a href="#historia" class="nav-link">História</a></li>
-                        <li><a href="#turmas" class="nav-link">Turmas</a></li>
-                        <li><a href="#mural" class="nav-link">Mural</a></li>
-                        <li><a href="#contato" class="nav-link">Contato</a></li>
-                        <li><a href="#pre-matricula" class="nav-link">Pré-Matrícula</a></li>
+                <nav class="hidden lg:flex" aria-label="Navegação principal">
+                    <ul class="flex space-x-6">
+                        <li><a href="#inicio" class="text-foreground font-medium px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Início</a></li>
+                        <li><a href="#historia" class="text-foreground font-medium px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">História</a></li>
+                        <li><a href="#turmas" class="text-foreground font-medium px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Turmas</a></li>
+                        <li><a href="#mural" class="text-foreground font-medium px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Mural</a></li>
+                        <li><a href="#contato" class="text-foreground font-medium px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Contato</a></li>
+                        <li><a href="#pre-matricula" class="text-foreground font-medium px-3 py-2 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Pré-Matrícula</a></li>
                     </ul>
                 </nav>
                 
                 <!-- Botão WhatsApp sempre visível -->
-                <a href="#" class="btn btn-whatsapp" id="whatsapp-header" aria-label="Conversar no WhatsApp">
-                    <span class="whatsapp-icon">📱</span>
-                    Fale no WhatsApp
+                <a href="#" class="btn-whatsapp px-4 py-2 rounded-md font-medium inline-flex items-center gap-2 min-h-[48px] transition-all duration-300" id="whatsapp-header" aria-label="Conversar no WhatsApp">
+                    <span class="text-lg">📱</span>
+                    <span class="hidden sm:inline">Fale no WhatsApp</span>
                 </a>
                 
                 <!-- Menu hamburguer mobile -->
-                <button class="menu-toggle" id="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <button class="lg:hidden flex flex-col justify-center w-8 h-8 bg-transparent border-0 cursor-pointer p-0" id="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -71,14 +66,14 @@
             </div>
             
             <!-- Menu mobile -->
-            <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
-                <ul>
-                    <li><a href="#inicio" class="nav-link-mobile">Início</a></li>
-                    <li><a href="#historia" class="nav-link-mobile">História</a></li>
-                    <li><a href="#turmas" class="nav-link-mobile">Turmas</a></li>
-                    <li><a href="#mural" class="nav-link-mobile">Mural</a></li>
-                    <li><a href="#contato" class="nav-link-mobile">Contato</a></li>
-                    <li><a href="#pre-matricula" class="nav-link-mobile">Pré-Matrícula</a></li>
+            <nav class="lg:hidden absolute top-full left-0 right-0 bg-card border-b border-border shadow-large hidden animate-slide-in" id="nav-mobile" aria-label="Menu mobile">
+                <ul class="p-6">
+                    <li class="mb-2"><a href="#inicio" class="block text-foreground font-medium px-4 py-3 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Início</a></li>
+                    <li class="mb-2"><a href="#historia" class="block text-foreground font-medium px-4 py-3 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">História</a></li>
+                    <li class="mb-2"><a href="#turmas" class="block text-foreground font-medium px-4 py-3 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Turmas</a></li>
+                    <li class="mb-2"><a href="#mural" class="block text-foreground font-medium px-4 py-3 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Mural</a></li>
+                    <li class="mb-2"><a href="#contato" class="block text-foreground font-medium px-4 py-3 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Contato</a></li>
+                    <li><a href="#pre-matricula" class="block text-foreground font-medium px-4 py-3 rounded-md hover:text-primary hover:bg-primary/10 transition-colors">Pré-Matrícula</a></li>
                 </ul>
             </nav>
         </div>
@@ -86,35 +81,35 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero" id="inicio">
-            <div class="container">
-                <div class="hero-content">
-                    <h2 class="hero-title">Educação com carinho e propósito</h2>
-                    <p class="hero-subtitle">Formando cidadãos do futuro com amor, dedicação e excelência pedagógica desde a educação infantil até o 5º ano do ensino fundamental.</p>
-                    <div class="hero-actions">
-                        <a href="#pre-matricula" class="btn btn-primary">Faça a Pré-Matrícula</a>
-                        <a href="#historia" class="btn btn-secondary">Conheça Nossa História</a>
+        <section class="min-h-screen bg-gradient-to-br from-primary via-primary to-blue-700 text-white flex items-center pt-20 relative overflow-hidden hero-pattern animate-fade-in" id="inicio">
+            <div class="section-container relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-float">Educação com carinho e propósito</h2>
+                    <p class="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">Formando cidadãos do futuro com amor, dedicação e excelência pedagógica desde a educação infantil até o 5º ano do ensino fundamental.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#pre-matricula" class="btn-gradient-primary px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center text-lg">Faça a Pré-Matrícula</a>
+                        <a href="#historia" class="bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center text-lg transition-all duration-300">Conheça Nossa História</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- História da Escola -->
-        <section class="historia" id="historia">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Nossa História</h2>
-                    <p class="section-subtitle">Tradição em educação há mais de uma década</p>
+        <section class="py-20 bg-white" id="historia">
+            <div class="section-container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossa História</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Tradição em educação há mais de uma década</p>
                 </div>
                 
-                <div class="historia-content">
-                    <div class="historia-text">
+                <div class="max-w-4xl mx-auto">
+                    <div class="prose prose-lg max-w-none">
                         <!-- EDITÁVEL: Substitua este conteúdo pela história real da escola -->
-                        <p>O <strong>Educandário Emmanuel Junior</strong> nasceu da paixão pela educação e do compromisso em oferecer ensino de qualidade para crianças de 3 a 10 anos. Fundado em 2010, nossa escola tem como missão formar cidadãos críticos, criativos e responsáveis, preparados para os desafios do futuro.</p>
+                        <p class="text-lg leading-relaxed mb-6 text-justify">O <strong class="text-primary">Educandário Emmanuel Junior</strong> nasceu da paixão pela educação e do compromisso em oferecer ensino de qualidade para crianças de 3 a 10 anos. Fundado em 2010, nossa escola tem como missão formar cidadãos críticos, criativos e responsáveis, preparados para os desafios do futuro.</p>
                         
-                        <p>Nossa metodologia pedagógica combina tradição e inovação, priorizando o desenvolvimento integral da criança através de atividades lúdicas, projetos interdisciplinares e muito carinho. Acreditamos que cada criança é única e merece atenção individualizada para desenvolver todo seu potencial.</p>
+                        <p class="text-lg leading-relaxed mb-6 text-justify">Nossa metodologia pedagógica combina tradição e inovação, priorizando o desenvolvimento integral da criança através de atividades lúdicas, projetos interdisciplinares e muito carinho. Acreditamos que cada criança é única e merece atenção individualizada para desenvolver todo seu potencial.</p>
                         
-                        <p>Com uma equipe de profissionais qualificados e apaixonados pelo que fazem, oferecemos um ambiente acolhedor e seguro onde as crianças podem aprender, brincar e crescer felizes. Nossa infraestrutura foi pensada especialmente para atender às necessidades de cada faixa etária, proporcionando experiências educativas significativas.</p>
+                        <p class="text-lg leading-relaxed mb-6 text-justify">Com uma equipe de profissionais qualificados e apaixonados pelo que fazem, oferecemos um ambiente acolhedor e seguro onde as crianças podem aprender, brincar e crescer felizes. Nossa infraestrutura foi pensada especialmente para atender às necessidades de cada faixa etária, proporcionando experiências educativas significativas.</p>
                         
                         <!-- Para editar: Substitua os parágrafos acima pela história real da escola -->
                     </div>
@@ -123,109 +118,109 @@
         </section>
 
         <!-- Turmas -->
-        <section class="turmas" id="turmas">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Nossas Turmas</h2>
-                    <p class="section-subtitle">Educação adequada para cada fase do desenvolvimento</p>
+        <section class="py-20 bg-gradient-to-br from-muted to-muted/50" id="turmas">
+            <div class="section-container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Nossas Turmas</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Educação adequada para cada fase do desenvolvimento</p>
                 </div>
                 
-                <div class="turmas-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Infantil I -->
-                    <div class="turma-card">
-                        <div class="turma-icon">🎨</div>
-                        <h3 class="turma-title">Infantil I</h3>
-                        <p class="turma-idade">3 a 4 anos</p>
-                        <p class="turma-descricao">Desenvolvimento lúdico e social através de brincadeiras, música e primeiras descobertas do mundo ao redor.</p>
-                        <ul class="turma-atividades">
-                            <li>Socialização e autonomia</li>
-                            <li>Coordenação motora</li>
-                            <li>Linguagem oral</li>
-                            <li>Jogos e brincadeiras</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-primary">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Infantil I</h3>
+                        <p class="text-secondary font-semibold mb-4">3 a 4 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Desenvolvimento lúdico e social através de brincadeiras, música e primeiras descobertas do mundo ao redor.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Socialização e autonomia</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Coordenação motora</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Linguagem oral</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Jogos e brincadeiras</li>
                         </ul>
                     </div>
                     
                     <!-- Infantil II -->
-                    <div class="turma-card">
-                        <div class="turma-icon">📚</div>
-                        <h3 class="turma-title">Infantil II</h3>
-                        <p class="turma-idade">4 a 5 anos</p>
-                        <p class="turma-descricao">Introdução à alfabetização de forma lúdica, preparando as crianças para o ensino fundamental.</p>
-                        <ul class="turma-atividades">
-                            <li>Pré-alfabetização</li>
-                            <li>Conceitos básicos de matemática</li>
-                            <li>Arte e criatividade</li>
-                            <li>Educação ambiental</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-secondary">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">Infantil II</h3>
+                        <p class="text-secondary font-semibold mb-4">4 a 5 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Introdução à alfabetização de forma lúdica, preparando as crianças para o ensino fundamental.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Pré-alfabetização</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Conceitos básicos de matemática</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Arte e criatividade</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Educação ambiental</li>
                         </ul>
                     </div>
                     
                     <!-- 1º Ano -->
-                    <div class="turma-card">
-                        <div class="turma-icon">✏️</div>
-                        <h3 class="turma-title">1º Ano</h3>
-                        <p class="turma-idade">6 anos</p>
-                        <p class="turma-descricao">Início formal da alfabetização, desenvolvimento da leitura e escrita de forma divertida e significativa.</p>
-                        <ul class="turma-atividades">
-                            <li>Alfabetização completa</li>
-                            <li>Matemática básica</li>
-                            <li>Ciências naturais</li>
-                            <li>Educação física</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-accent">
+                        <div class="text-4xl mb-4">✏️</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">1º Ano</h3>
+                        <p class="text-secondary font-semibold mb-4">6 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Início formal da alfabetização, desenvolvimento da leitura e escrita de forma divertida e significativa.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Alfabetização completa</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Matemática básica</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Ciências naturais</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Educação física</li>
                         </ul>
                     </div>
                     
                     <!-- 2º Ano -->
-                    <div class="turma-card">
-                        <div class="turma-icon">📖</div>
-                        <h3 class="turma-title">2º Ano</h3>
-                        <p class="turma-idade">7 anos</p>
-                        <p class="turma-descricao">Consolidação da leitura e escrita, desenvolvimento do raciocínio lógico e criatividade.</p>
-                        <ul class="turma-atividades">
-                            <li>Fluência na leitura</li>
-                            <li>Produção textual</li>
-                            <li>Operações matemáticas</li>
-                            <li>Projetos temáticos</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-primary">
+                        <div class="text-4xl mb-4">📖</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">2º Ano</h3>
+                        <p class="text-secondary font-semibold mb-4">7 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Consolidação da leitura e escrita, desenvolvimento do raciocínio lógico e criatividade.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Fluência na leitura</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Produção textual</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Operações matemáticas</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Projetos temáticos</li>
                         </ul>
                     </div>
                     
                     <!-- 3º Ano -->
-                    <div class="turma-card">
-                        <div class="turma-icon">🔬</div>
-                        <h3 class="turma-title">3º Ano</h3>
-                        <p class="turma-idade">8 anos</p>
-                        <p class="turma-descricao">Aprofundamento dos conhecimentos, desenvolvimento do pensamento crítico e científico.</p>
-                        <ul class="turma-atividades">
-                            <li>Interpretação textual</li>
-                            <li>Resolução de problemas</li>
-                            <li>Experimentos científicos</li>
-                            <li>Geografia e história</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-secondary">
+                        <div class="text-4xl mb-4">🔬</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">3º Ano</h3>
+                        <p class="text-secondary font-semibold mb-4">8 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Aprofundamento dos conhecimentos, desenvolvimento do pensamento crítico e científico.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Interpretação textual</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Resolução de problemas</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Experimentos científicos</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></span>Geografia e história</li>
                         </ul>
                     </div>
                     
                     <!-- 4º Ano -->
-                    <div class="turma-card">
-                        <div class="turma-icon">🌟</div>
-                        <h3 class="turma-title">4º Ano</h3>
-                        <p class="turma-idade">9 anos</p>
-                        <p class="turma-descricao">Desenvolvimento da autonomia nos estudos e preparação para desafios mais complexos.</p>
-                        <ul class="turma-atividades">
-                            <li>Estudos independentes</li>
-                            <li>Projetos de pesquisa</li>
-                            <li>Matemática avançada</li>
-                            <li>Cidadania e valores</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-accent">
+                        <div class="text-4xl mb-4">🌟</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">4º Ano</h3>
+                        <p class="text-secondary font-semibold mb-4">9 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Desenvolvimento da autonomia nos estudos e preparação para desafios mais complexos.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Estudos independentes</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Projetos de pesquisa</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Matemática avançada</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-accent rounded-full flex-shrink-0"></span>Cidadania e valores</li>
                         </ul>
                     </div>
                     
                     <!-- 5º Ano -->
-                    <div class="turma-card">
-                        <div class="turma-icon">🎓</div>
-                        <h3 class="turma-title">5º Ano</h3>
-                        <p class="turma-idade">10 anos</p>
-                        <p class="turma-descricao">Finalização do ensino fundamental I com base sólida para continuidade dos estudos.</p>
-                        <ul class="turma-atividades">
-                            <li>Preparação para o fundamental II</li>
-                            <li>Projetos interdisciplinares</li>
-                            <li>Liderança e trabalho em equipe</li>
-                            <li>Apresentações e debates</li>
+                    <div class="card-school p-6 text-center border-t-4 border-t-primary">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-bold text-primary mb-2">5º Ano</h3>
+                        <p class="text-secondary font-semibold mb-4">10 anos</p>
+                        <p class="text-foreground mb-6 leading-relaxed">Finalização do ensino fundamental I com base sólida para continuidade dos estudos.</p>
+                        <ul class="text-left space-y-2">
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Preparação para o fundamental II</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Projetos interdisciplinares</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Liderança e trabalho em equipe</li>
+                            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>Apresentações e debates</li>
                         </ul>
                     </div>
                 </div>
@@ -233,54 +228,54 @@
         </section>
 
         <!-- Mural de Fotos -->
-        <section class="mural" id="mural">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Mural de Fotos</h2>
-                    <p class="section-subtitle">Momentos especiais da nossa escola</p>
+        <section class="py-20 bg-white" id="mural">
+            <div class="section-container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Mural de Fotos</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Momentos especiais da nossa escola</p>
                 </div>
                 
                 <!-- EDITÁVEL: Para adicionar/trocar imagens, substitua as imagens na pasta /assets/img/ e atualize os nomes aqui -->
-                <div class="galeria-grid">
-                    <div class="galeria-item" data-src="assets/img/mural-01.jpg" data-alt="Crianças em atividade em sala de aula">
-                        <img src="assets/img/mural-01.jpg" alt="Crianças em atividade em sala de aula" loading="lazy">
-                        <div class="galeria-overlay">
-                            <span class="galeria-icon">🔍</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-item" data-src="assets/img/mural-01.jpg" data-alt="Crianças em atividade em sala de aula" tabindex="0" role="button" aria-label="Abrir imagem: Crianças em atividade em sala de aula">
+                        <img src="assets/img/mural-01.jpg" alt="Crianças em atividade em sala de aula" loading="lazy" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <span class="text-4xl">🔍</span>
                         </div>
                     </div>
                     
-                    <div class="galeria-item" data-src="assets/img/mural-02.jpg" data-alt="Recreação no pátio da escola">
-                        <img src="assets/img/mural-02.jpg" alt="Recreação no pátio da escola" loading="lazy">
-                        <div class="galeria-overlay">
-                            <span class="galeria-icon">🔍</span>
+                    <div class="gallery-item" data-src="assets/img/mural-02.jpg" data-alt="Recreação no pátio da escola" tabindex="0" role="button" aria-label="Abrir imagem: Recreação no pátio da escola">
+                        <img src="assets/img/mural-02.jpg" alt="Recreação no pátio da escola" loading="lazy" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <span class="text-4xl">🔍</span>
                         </div>
                     </div>
                     
-                    <div class="galeria-item" data-src="assets/img/mural-03.jpg" data-alt="Atividades de arte e criatividade">
-                        <img src="assets/img/mural-03.jpg" alt="Atividades de arte e criatividade" loading="lazy">
-                        <div class="galeria-overlay">
-                            <span class="galeria-icon">🔍</span>
+                    <div class="gallery-item" data-src="assets/img/mural-03.jpg" data-alt="Atividades de arte e criatividade" tabindex="0" role="button" aria-label="Abrir imagem: Atividades de arte e criatividade">
+                        <img src="assets/img/mural-03.jpg" alt="Atividades de arte e criatividade" loading="lazy" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <span class="text-4xl">🔍</span>
                         </div>
                     </div>
                     
-                    <div class="galeria-item" data-src="assets/img/mural-04.jpg" data-alt="Momento de leitura na biblioteca">
-                        <img src="assets/img/mural-04.jpg" alt="Momento de leitura na biblioteca" loading="lazy">
-                        <div class="galeria-overlay">
-                            <span class="galeria-icon">🔍</span>
+                    <div class="gallery-item" data-src="assets/img/mural-04.jpg" data-alt="Momento de leitura na biblioteca" tabindex="0" role="button" aria-label="Abrir imagem: Momento de leitura na biblioteca">
+                        <img src="assets/img/mural-04.jpg" alt="Momento de leitura na biblioteca" loading="lazy" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <span class="text-4xl">🔍</span>
                         </div>
                     </div>
                     
-                    <div class="galeria-item" data-src="assets/img/mural-05.jpg" data-alt="Atividades esportivas e educação física">
-                        <img src="assets/img/mural-05.jpg" alt="Atividades esportivas e educação física" loading="lazy">
-                        <div class="galeria-overlay">
-                            <span class="galeria-icon">🔍</span>
+                    <div class="gallery-item" data-src="assets/img/mural-05.jpg" data-alt="Atividades esportivas e educação física" tabindex="0" role="button" aria-label="Abrir imagem: Atividades esportivas e educação física">
+                        <img src="assets/img/mural-05.jpg" alt="Atividades esportivas e educação física" loading="lazy" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <span class="text-4xl">🔍</span>
                         </div>
                     </div>
                     
-                    <div class="galeria-item" data-src="assets/img/mural-06.jpg" data-alt="Formatura e eventos especiais">
-                        <img src="assets/img/mural-06.jpg" alt="Formatura e eventos especiais" loading="lazy">
-                        <div class="galeria-overlay">
-                            <span class="galeria-icon">🔍</span>
+                    <div class="gallery-item" data-src="assets/img/mural-06.jpg" data-alt="Formatura e eventos especiais" tabindex="0" role="button" aria-label="Abrir imagem: Formatura e eventos especiais">
+                        <img src="assets/img/mural-06.jpg" alt="Formatura e eventos especiais" loading="lazy" class="w-full h-full object-cover">
+                        <div class="gallery-overlay">
+                            <span class="text-4xl">🔍</span>
                         </div>
                     </div>
                 </div>
@@ -288,125 +283,126 @@
         </section>
 
         <!-- Contato -->
-        <section class="contato" id="contato">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Entre em Contato</h2>
-                    <p class="section-subtitle">Estamos aqui para esclarecer suas dúvidas</p>
+        <section class="py-20 bg-gradient-to-br from-muted to-muted/50" id="contato">
+            <div class="section-container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Entre em Contato</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Estamos aqui para esclarecer suas dúvidas</p>
                 </div>
                 
-                <div class="contato-content">
-                    <div class="contato-info">
-                        <div class="contato-item">
-                            <div class="contato-icon">📱</div>
-                            <div class="contato-details">
-                                <h3>WhatsApp</h3>
-                                <p>Tire suas dúvidas rapidamente</p>
-                                <a href="#" class="btn btn-whatsapp" id="whatsapp-contato">Chamar no WhatsApp</a>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4 p-6 bg-card rounded-lg shadow-soft">
+                            <div class="text-4xl">📱</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-2">WhatsApp</h3>
+                                <p class="text-muted-foreground mb-4">Tire suas dúvidas rapidamente</p>
+                                <a href="#" class="btn-whatsapp px-6 py-3 rounded-md font-medium inline-flex items-center gap-2" id="whatsapp-contato">Chamar no WhatsApp</a>
                             </div>
                         </div>
                         
-                        <div class="contato-item">
-                            <div class="contato-icon">📧</div>
-                            <div class="contato-details">
-                                <h3>E-mail</h3>
-                                <p>Envie sua mensagem</p>
-                                <a href="mailto:" class="contato-email" id="email-contato">contato@exemplo.com</a>
+                        <div class="flex items-start gap-4 p-6 bg-card rounded-lg shadow-soft">
+                            <div class="text-4xl">📧</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-2">E-mail</h3>
+                                <p class="text-muted-foreground mb-4">Envie sua mensagem</p>
+                                <a href="mailto:" class="text-primary hover:text-primary/80 font-medium underline" id="email-contato">contato@exemplo.com</a>
                             </div>
                         </div>
                         
-                        <div class="contato-item">
-                            <div class="contato-icon">📍</div>
-                            <div class="contato-details">
-                                <h3>Endereço</h3>
-                                <p id="endereco-texto">Rua Exemplo, 123 - Bairro, Cidade/UF</p>
+                        <div class="flex items-start gap-4 p-6 bg-card rounded-lg shadow-soft">
+                            <div class="text-4xl">📍</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-2">Endereço</h3>
+                                <p class="text-muted-foreground" id="endereco-texto">Rua Exemplo, 123 - Bairro, Cidade/UF</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="redes-sociais">
-                        <h3>Siga-nos nas redes sociais</h3>
-                        <div class="redes-links">
-                            <a href="#" class="rede-link" id="instagram-link" aria-label="Instagram do Educandário Emmanuel Junior">
-                                <span class="rede-icon">📷</span>
-                                Instagram
-                            </a>
-                            <a href="#" class="rede-link" id="facebook-link" aria-label="Facebook do Educandário Emmanuel Junior">
-                                <span class="rede-icon">📘</span>
-                                Facebook
-                            </a>
+                    <div class="space-y-8">
+                        <div class="p-6 bg-card rounded-lg shadow-soft">
+                            <h3 class="text-xl font-bold text-primary mb-6">Siga-nos nas redes sociais</h3>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="#" class="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-md font-medium transition-transform hover:scale-105" id="instagram-link" aria-label="Instagram do Educandário Emmanuel Junior">
+                                    <span class="text-xl">📷</span>
+                                    Instagram
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-transform hover:scale-105" id="facebook-link" aria-label="Facebook do Educandário Emmanuel Junior">
+                                    <span class="text-xl">📘</span>
+                                    Facebook
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Mapa -->
-                <div class="mapa-container">
-                    <h3>Nossa Localização</h3>
-                    <div class="mapa-wrapper">
-                        <!-- EDITÁVEL: Substitua pela URL do mapa embed do Google Maps da sua escola -->
-                        <iframe 
-                            id="google-maps" 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.558200000!2d-34.906!3d-8.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDMnMDAuMCJTIDM0wrA1NCczNi4wIlc!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Localização do Educandário Emmanuel Junior">
-                        </iframe>
+                        
+                        <!-- Mapa -->
+                        <div class="p-6 bg-card rounded-lg shadow-soft">
+                            <h3 class="text-xl font-bold text-primary mb-4">Nossa Localização</h3>
+                            <div class="w-full h-64 rounded-md overflow-hidden">
+                                <iframe 
+                                    id="google-maps" 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.558200000!2d-34.906!3d-8.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMDMnMDAuMCJTIDM0wrA1NCczNi4wIlc!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Localização do Educandário Emmanuel Junior">
+                                </iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Formulário de Pré-Matrícula -->
-        <section class="pre-matricula" id="pre-matricula">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Pré-Matrícula</h2>
-                    <p class="section-subtitle">Reserve a vaga do seu filho conosco</p>
+        <section class="py-20 bg-white" id="pre-matricula">
+            <div class="section-container">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Pré-Matrícula</h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto">Reserve a vaga do seu filho conosco</p>
                 </div>
                 
-                <form class="formulario" id="form-pre-matricula" novalidate>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nome-aluno" class="form-label">Nome completo do aluno <span class="required">*</span></label>
-                            <input type="text" id="nome-aluno" name="nome_aluno" class="form-input" required aria-describedby="nome-aluno-error">
-                            <span class="form-error" id="nome-aluno-error"></span>
+                <form class="max-w-4xl mx-auto bg-card p-8 rounded-lg shadow-medium" id="form-pre-matricula" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="nome-aluno" class="block text-sm font-medium text-foreground mb-2">Nome completo do aluno <span class="text-destructive">*</span></label>
+                            <input type="text" id="nome-aluno" name="nome_aluno" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" required aria-describedby="nome-aluno-error">
+                            <span class="form-error-message text-destructive text-sm mt-1" id="nome-aluno-error"></span>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="data-nascimento" class="form-label">Data de nascimento <span class="required">*</span></label>
-                            <input type="date" id="data-nascimento" name="data_nascimento" class="form-input" required aria-describedby="data-nascimento-error">
-                            <span class="form-error" id="data-nascimento-error"></span>
+                        <div>
+                            <label for="data-nascimento" class="block text-sm font-medium text-foreground mb-2">Data de nascimento <span class="text-destructive">*</span></label>
+                            <input type="date" id="data-nascimento" name="data_nascimento" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" required aria-describedby="data-nascimento-error">
+                            <span class="form-error-message text-destructive text-sm mt-1" id="data-nascimento-error"></span>
                         </div>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="responsavel" class="form-label">Nome do responsável <span class="required">*</span></label>
-                            <input type="text" id="responsavel" name="responsavel" class="form-input" required aria-describedby="responsavel-error">
-                            <span class="form-error" id="responsavel-error"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="responsavel" class="block text-sm font-medium text-foreground mb-2">Nome do responsável <span class="text-destructive">*</span></label>
+                            <input type="text" id="responsavel" name="responsavel" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" required aria-describedby="responsavel-error">
+                            <span class="form-error-message text-destructive text-sm mt-1" id="responsavel-error"></span>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="telefone" class="form-label">Telefone/WhatsApp <span class="required">*</span></label>
-                            <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(00) 00000-0000" required aria-describedby="telefone-error">
-                            <span class="form-error" id="telefone-error"></span>
+                        <div>
+                            <label for="telefone" class="block text-sm font-medium text-foreground mb-2">Telefone/WhatsApp <span class="text-destructive">*</span></label>
+                            <input type="tel" id="telefone" name="telefone" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" placeholder="(00) 00000-0000" required aria-describedby="telefone-error">
+                            <span class="form-error-message text-destructive text-sm mt-1" id="telefone-error"></span>
                         </div>
                     </div>
                     
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email" class="form-label">E-mail do responsável <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
-                            <span class="form-error" id="email-error"></span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-foreground mb-2">E-mail do responsável <span class="text-destructive">*</span></label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" required aria-describedby="email-error">
+                            <span class="form-error-message text-destructive text-sm mt-1" id="email-error"></span>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="turma" class="form-label">Turma pretendida <span class="required">*</span></label>
-                            <select id="turma" name="turma" class="form-select" required aria-describedby="turma-error">
+                        <div>
+                            <label for="turma" class="block text-sm font-medium text-foreground mb-2">Turma pretendida <span class="text-destructive">*</span></label>
+                            <select id="turma" name="turma" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" required aria-describedby="turma-error">
                                 <option value="">Selecione a turma</option>
                                 <option value="Infantil I">Infantil I (3-4 anos)</option>
                                 <option value="Infantil II">Infantil II (4-5 anos)</option>
@@ -416,30 +412,34 @@
                                 <option value="4º Ano">4º Ano (9 anos)</option>
                                 <option value="5º Ano">5º Ano (10 anos)</option>
                             </select>
-                            <span class="form-error" id="turma-error"></span>
+                            <span class="form-error-message text-destructive text-sm mt-1" id="turma-error"></span>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="observacoes" class="form-label">Observações (opcional)</label>
-                        <textarea id="observacoes" name="observacoes" class="form-textarea" rows="4" placeholder="Informações adicionais que gostaria de compartilhar..."></textarea>
+                    <div class="mb-8">
+                        <label for="observacoes" class="block text-sm font-medium text-foreground mb-2">Observações (opcional)</label>
+                        <textarea id="observacoes" name="observacoes" class="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-ring transition-colors" rows="4" placeholder="Informações adicionais que gostaria de compartilhar..."></textarea>
                     </div>
                     
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+                    <div class="text-center">
+                        <button type="submit" class="btn-gradient-primary px-8 py-4 rounded-lg font-semibold text-lg min-w-[200px]" id="btn-submit">
                             <span class="btn-text">Enviar Pré-Matrícula</span>
-                            <span class="btn-loading" style="display: none;">Enviando...</span>
+                            <span class="btn-loading hidden">Enviando...</span>
                         </button>
                     </div>
                     
-                    <div class="form-messages">
-                        <div class="success-message" id="success-message" style="display: none;">
-                            <span class="message-icon">✅</span>
-                            <span class="message-text">Pré-matrícula enviada com sucesso! Entraremos em contato em breve.</span>
+                    <div class="mt-6 space-y-4">
+                        <div class="hidden p-4 bg-accent/10 border border-accent rounded-lg" id="success-message">
+                            <div class="flex items-center gap-2 text-accent">
+                                <span class="text-xl">✅</span>
+                                <span>Pré-matrícula enviada com sucesso! Entraremos em contato em breve.</span>
+                            </div>
                         </div>
-                        <div class="error-message" id="error-message" style="display: none;">
-                            <span class="message-icon">❌</span>
-                            <span class="message-text" id="error-text">Erro ao enviar formulário. Tente novamente.</span>
+                        <div class="hidden p-4 bg-destructive/10 border border-destructive rounded-lg" id="error-message">
+                            <div class="flex items-center gap-2 text-destructive">
+                                <span class="text-xl">❌</span>
+                                <span id="error-text">Erro ao enviar formulário. Tente novamente.</span>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -448,46 +448,46 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Educandário Emmanuel Junior</h3>
-                    <p>Educação com carinho e propósito</p>
+    <footer class="bg-primary text-white py-12">
+        <div class="section-container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Educandário Emmanuel Junior</h3>
+                    <p class="text-white/80">Educação com carinho e propósito</p>
                 </div>
                 
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#historia">História</a></li>
-                        <li><a href="#turmas">Turmas</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-white/80 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#historia" class="text-white/80 hover:text-white transition-colors">História</a></li>
+                        <li><a href="#turmas" class="text-white/80 hover:text-white transition-colors">Turmas</a></li>
+                        <li><a href="#contato" class="text-white/80 hover:text-white transition-colors">Contato</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-contato">
-                    <h4>Contato</h4>
-                    <p id="footer-endereco">Rua Exemplo, 123</p>
-                    <p id="footer-email">contato@exemplo.com</p>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <p class="text-white/80" id="footer-endereco">Rua Exemplo, 123</p>
+                    <p class="text-white/80" id="footer-email">contato@exemplo.com</p>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2024</span> Educandário Emmanuel Junior. Todos os direitos reservados.</p>
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-white/80">&copy; <span id="current-year">2024</span> Educandário Emmanuel Junior. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-labelledby="lightbox-title">
-        <div class="lightbox-overlay" id="lightbox-overlay"></div>
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightbox-close" aria-label="Fechar galeria">✕</button>
-            <button class="lightbox-prev" id="lightbox-prev" aria-label="Imagem anterior">‹</button>
-            <button class="lightbox-next" id="lightbox-next" aria-label="Próxima imagem">›</button>
-            <img src="" alt="" class="lightbox-image" id="lightbox-image">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 opacity-0 pointer-events-none transition-opacity duration-300 lightbox-open:opacity-100 lightbox-open:pointer-events-auto" id="lightbox" aria-hidden="true" role="dialog" aria-labelledby="lightbox-title">
+        <div class="absolute inset-0" id="lightbox-overlay"></div>
+        <div class="relative max-w-4xl max-h-[90vh] mx-4">
+            <button class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors" id="lightbox-close" aria-label="Fechar galeria">✕</button>
+            <button class="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-2xl" id="lightbox-prev" aria-label="Imagem anterior">‹</button>
+            <button class="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-2xl" id="lightbox-next" aria-label="Próxima imagem">›</button>
+            <img src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" id="lightbox-image">
+            <div class="absolute bottom-4 left-0 right-0 text-center text-white bg-black/50 py-2 px-4 rounded" id="lightbox-caption"></div>
         </div>
     </div>
 
